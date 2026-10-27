@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f0f2ed;
+  background: #111312;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; }
+a { color: inherit; }
+
+.auth-layout { min-height: 100vh; display: grid; grid-template-columns: minmax(320px, 1fr) minmax(400px, .85fr); }
+.auth-intro { padding: clamp(32px, 6vw, 88px); background: radial-gradient(ellipse at 30% 75%, #29473a 0, #18221e 35%, #111312 75%); display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh; }
+.brand { color: #f2f4ef; font: 700 17px 'Space Grotesk', sans-serif; letter-spacing: .16em; text-decoration: none; }
+.brand span { color: #a7e27d; }
+.eyebrow { color: #a7e27d; font: 500 11px 'DM Mono', monospace; letter-spacing: .14em; }
+.auth-intro h1, .profile-card h1 { font: 500 clamp(44px, 6.7vw, 88px)/.98 'Space Grotesk', sans-serif; letter-spacing: -.06em; margin: 22px 0; }
+.intro-copy { color: #a7afa8; font-size: 16px; max-width: 380px; line-height: 1.7; }
+.intro-foot { color: #89918a; font: 12px 'DM Mono', monospace; }
+.intro-foot span { color: #a7e27d; font-size: 18px; margin-left: 6px; }
+.auth-panel { display: grid; place-items: center; padding: 48px 28px; background: #171a18; }
+.auth-form-wrap { width: min(100%, 410px); }
+.auth-form-wrap h2 { font: 500 31px 'Space Grotesk', sans-serif; margin: 16px 0 7px; }
+.muted { color: #8e9690; line-height: 1.65; }
+.auth-form-wrap form { display: grid; gap: 18px; margin-top: 32px; }
+label { display: grid; gap: 8px; color: #bdc3bd; font-size: 13px; }
+input { width: 100%; color: #f2f4ef; background: #111312; border: 1px solid #363d38; border-radius: 7px; padding: 13px 14px; outline: none; }
+input:focus { border-color: #a7e27d; box-shadow: 0 0 0 3px #a7e27d1c; }
+.button { border: 0; border-radius: 7px; padding: 13px 17px; cursor: pointer; font-weight: 600; transition: background .15s ease, transform .15s ease; }
+.button:disabled { opacity: .6; cursor: wait; }
+.button-primary { display: flex; justify-content: space-between; align-items: center; color: #101510; background: #a7e27d; margin-top: 4px; }
+.button-primary:hover:not(:disabled) { background: #baf399; transform: translateY(-1px); }
+.button-quiet { color: #c7cdc7; background: #252a26; }
+.form-switch { color: #8e9690; font-size: 13px; margin-top: 25px; }
+.form-switch a { color: #a7e27d; text-decoration: none; }
+.form-error, .form-success { font-size: 13px; line-height: 1.5; }
+.form-error { color: #ff9a8b; }
+.form-success { color: #a7e27d; }
+.profile-page { min-height: 100vh; background: radial-gradient(ellipse at 80% 10%, #24342a 0, #111312 48%); padding: 0 clamp(20px, 7vw, 100px) 80px; }
+.topbar { height: 88px; border-bottom: 1px solid #2b302c; display: flex; align-items: center; justify-content: space-between; }
+.profile-card { width: min(100%, 720px); margin: 12vh auto 0; padding: clamp(28px, 5vw, 58px); background: #191d1a; border: 1px solid #2a312c; border-radius: 14px; }
+.profile-card h1 { max-width: 600px; font-size: clamp(40px, 6vw, 66px); }
+.profile-card dl { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 35px 0; }
+.profile-card dl div { background: #111312; padding: 18px; border-radius: 8px; }
+.profile-card dt { color: #858e87; font: 11px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .1em; }
+.profile-card dd { margin: 9px 0 0; overflow-wrap: anywhere; }
+.creator-badge { display: inline-block; color: #a7e27d; font: 11px 'DM Mono', monospace; letter-spacing: .1em; }
+.page-state { min-height: 100vh; display: grid; place-items: center; color: #a7afa8; }
+.session-error { width: min(100% - 40px, 480px); padding: 32px; border: 1px solid #2a312c; border-radius: 12px; background: #191d1a; }
+.session-error h1 { font: 500 34px 'Space Grotesk', sans-serif; letter-spacing: -.04em; }
+
+@media (max-width: 760px) {
+  .auth-layout { grid-template-columns: 1fr; }
+  .auth-intro { min-height: 330px; padding: 30px 26px; }
+  .auth-intro h1 { font-size: 54px; }
+  .auth-intro > div { margin: 52px 0 26px; }
+  .auth-panel { padding: 54px 25px 70px; }
+}
+
+@media (max-width: 460px) {
+  .profile-card dl { grid-template-columns: 1fr; }
+}
